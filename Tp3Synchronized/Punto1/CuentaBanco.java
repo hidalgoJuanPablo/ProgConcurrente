@@ -1,4 +1,5 @@
-package sincronizado_p1;
+package Punto1;
+
 public class CuentaBanco {
     private int balance = 50;
     public CuentaBanco(){
