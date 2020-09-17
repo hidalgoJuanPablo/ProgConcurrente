@@ -1,2 +1,2 @@
-# Programaci-n-Concurrente
+# ProgConcurrente
 Programación Concurrente

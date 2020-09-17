@@ -1,0 +1,16 @@
+1.a)
+Hace falta una llave
+	if (cb.getBalance() >= cantidad)
+
+Opcion 1 para mejorarlo, sincronizando el objeto CuentaBanco
+	synchronized(cb)  {  if (cb.getBalance() >= cantidad) {
+
+Opcion 2 para mejorarlo, syncronizando el metodo HacerRetiro
+	private synchronized void HacerRetiro(int cantidad)throws InterruptedException{
+  
+2.a)
+2.b)
+2.c)
+
+3)
+4)
