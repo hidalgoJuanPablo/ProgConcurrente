@@ -9,7 +9,7 @@ package Tp4;
  *
  * @author repetto.francisco
  */
-public class Main3 {
+public class Main {
     
     public static void main(String[] args) {
         int i=2;
