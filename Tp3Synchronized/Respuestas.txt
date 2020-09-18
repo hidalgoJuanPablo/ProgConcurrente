@@ -2,15 +2,18 @@
 Hace falta una llave
 	if (cb.getBalance() >= cantidad)
 
-Opcion 1 para mejorarlo, sincronizando el objeto CuentaBanco
-	synchronized(cb)  {  if (cb.getBalance() >= cantidad) {
+Al ejecutar el código y no sincronizar los hilos, el Balance de la cuenta permite realizar retiros con 
+un balance negativo, esto se da ya que entre la comprobación de saldo y el retiro pude entrar el otro hilo
+a realizar otro movimiento.
+Cómo arreglarlo:
 
-Opcion 2 para mejorarlo, syncronizando el metodo HacerRetiro
+Opción 1 para mejorarlo, sincronizando el objeto CuentaBanco
+	synchronized(cb)  {  if (cb.getBalance() >= cantidad) {
+
+Opción 2 para mejorarlo, sincronizando el método HacerRetiro
 	private synchronized void HacerRetiro(int cantidad)throws InterruptedException{
-  
-2.a)
-2.b)
-2.c)
+  
+2.a) El ejecutar el código vemos que la vida toma valores fuera de los esperados 
 
-3)
-4)
+2.b) Que al compartir el recurso vida, en el momento de cambiar el valor vida o recuperarlo
+ambos personajes intentan quitar o agregar vida
