@@ -42,11 +42,7 @@ public class Palabra {
             }
         }else{
             System.out.println("No es turno de hilo: "+unLetra.getLetra());
-            try{
-                Thread.sleep(2000);
-            }catch(InterruptedException e){
-                
-            }
+            
         }
         return suTurno;
     }
