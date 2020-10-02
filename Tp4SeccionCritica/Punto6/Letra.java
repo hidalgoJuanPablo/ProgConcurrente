@@ -6,9 +6,9 @@ public class Letra implements Runnable {
     private String letra;
     private Turno turno;
 
-    public Letra( String l, int c, Turno t) {
+    public Letra(String l, int c, Turno t) {
         this.letra = l;
-        this.cantidad = c;        
+        this.cantidad = c;
         this.turno = t;
     }
 
@@ -22,12 +22,12 @@ public class Letra implements Runnable {
         while (!autoParado) {
             try {
                 turno.Preguntar();
-            } catch (InterruptedException e) {                 
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-             for (int i = 0; i < cantidad; i++) {          
-                    System.out.print(letra);            
-             }
+            for (int i = 0; i < cantidad; i++) {
+                System.out.print(letra);
+            }
             turno.Avanzar();
         }
     }

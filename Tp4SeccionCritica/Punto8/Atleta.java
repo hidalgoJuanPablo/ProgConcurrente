@@ -1,15 +1,5 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Tp4.rendezvous;
+package Punto8;
 
-/**
- *
- * @author repetto.francisco
- */
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -35,7 +25,7 @@ public class Atleta implements Runnable {
         long tiempoCorriendo;
         try{
             double tiempoActual=System.currentTimeMillis();
-            tiempoCorriendo = (long)((Math.random()*(11-9+1)+9))*1000;
+            tiempoCorriendo = (long)((Math.floor(Math.random()*(11-9+1)+9)))*1000;
             Thread.sleep(tiempoCorriendo);
             tiempoActual = (System.currentTimeMillis() - tiempoActual)/1000;
             System.out.println(Thread.currentThread().getName()+" tardo: "+tiempoActual+" s");
