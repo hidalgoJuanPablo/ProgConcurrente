@@ -35,7 +35,7 @@ public class Atleta implements Runnable {
         long tiempoCorriendo;
         try{
             double tiempoActual=System.currentTimeMillis();
-            tiempoCorriendo = (long)((Math.floor(Math.random()*(11-9+1)+9)))*1000;
+            tiempoCorriendo = (long)((Math.random()*(11-9+1)+9))*1000;
             Thread.sleep(tiempoCorriendo);
             tiempoActual = (System.currentTimeMillis() - tiempoActual)/1000;
             System.out.println(Thread.currentThread().getName()+" tardo: "+tiempoActual+" s");
