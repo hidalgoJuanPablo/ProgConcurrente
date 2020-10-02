@@ -9,28 +9,26 @@ public class Taxista implements Runnable {
     public Taxista(ViajeTaxi viaje) {
         this.viaje = viaje;
     }
-    
-    public void run(){
-        boolean termino=false;
-        while(!termino){
-            try{
+
+    public void run() {
+        boolean termino = false;
+        while (!termino) {
+            try {
                 viaje.esperaPasajero();
                 llevaPasajero();
                 viaje.terminoDeLlevar();
-            }catch(InterruptedException ex){
-                Logger.getLogger(Taxista.class.getName()).
-                log(Level.SEVERE, null, ex);                
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Taxista.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
     }
-    
-    public void llevaPasajero(){
-        try{
+
+    public void llevaPasajero() {
+        try {
             System.out.println("El taxista lleva a pasajero al destino");
-            Thread.sleep(7000);//Sleep para simular el viaje;
-        }catch(InterruptedException ex){
-            Logger.getLogger(Taxista.class.getName()).
-                log(Level.SEVERE, null, ex);                
+            Thread.sleep(7000);// Sleep para simular el viaje;
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Taxista.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }    
+    }
 }

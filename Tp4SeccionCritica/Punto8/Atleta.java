@@ -9,31 +9,27 @@ public class Atleta implements Runnable {
     public Atleta(Testigo palo) {
         this.palo = palo;
     }
-    
-    public void run(){
-        try{
-            palo.tomarTestigo();//El atleta espera recibir el testigo
+
+    public void run() {
+        try {
+            palo.tomarTestigo();// El atleta espera recibir el testigo
             correAtleta();
-            palo.soltarTestigo();//Termino de correr, se lo pasa al siguiente atleta y termina
-        }catch(InterruptedException ex){
-            Logger.getLogger(Atleta.class.getName()).
-                log(Level.SEVERE, null, ex);  
+            palo.soltarTestigo();// Termino de correr, se lo pasa al siguiente atleta y termina
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Atleta.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    private void correAtleta(){
+
+    private void correAtleta() {
         long tiempoCorriendo;
-        try{
-            double tiempoActual=System.currentTimeMillis();
-            tiempoCorriendo = (long)((Math.floor(Math.random()*(11-9+1)+9)))*1000;
+        try {
+            double tiempoActual = System.currentTimeMillis();
+            tiempoCorriendo = (long) ((Math.floor(Math.random() * (11 - 9 + 1) + 9))) * 1000;
             Thread.sleep(tiempoCorriendo);
-            tiempoActual = (System.currentTimeMillis() - tiempoActual)/1000;
-            System.out.println(Thread.currentThread().getName()+" tardo: "+tiempoActual+" s");
-        }catch(InterruptedException ex){
-            Logger.getLogger(Testigo.class.getName()).
-                log(Level.SEVERE, null, ex);
+            tiempoActual = (System.currentTimeMillis() - tiempoActual) / 1000;
+            System.out.println(Thread.currentThread().getName() + " tardo: " + tiempoActual + " s");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Testigo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-            
-        
 }
