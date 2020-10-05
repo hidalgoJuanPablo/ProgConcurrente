@@ -6,9 +6,15 @@ public class Letra implements Runnable {
     private String letra;
     private Turno turno;
 
+<<<<<<< Updated upstream
     public Letra(String l, int c, Turno t) {
         this.letra = l;
         this.cantidad = c;
+=======
+    public Letra( String l, int c, Turno t) {
+        this.letra = l;
+        this.cantidad = c;        
+>>>>>>> Stashed changes
         this.turno = t;
     }
 
@@ -22,12 +28,21 @@ public class Letra implements Runnable {
         while (!autoParado) {
             try {
                 turno.Preguntar();
+<<<<<<< Updated upstream
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             for (int i = 0; i < cantidad; i++) {
                 System.out.print(letra);
             }
+=======
+            } catch (InterruptedException e) {                 
+                e.printStackTrace();
+            }
+             for (int i = 0; i < cantidad; i++) {          
+                    System.out.print(letra);            
+             }
+>>>>>>> Stashed changes
             turno.Avanzar();
         }
     }
