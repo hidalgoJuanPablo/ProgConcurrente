@@ -1,27 +1,43 @@
 package Punto14;
 
 public class Main {
-    
+
     public static void main(String[] args) {
         Confiteria confiteria;
         confiteria = new Confiteria();
-       /*  Empleado[] empleados;
-       empleados(4); 
-        for (int i =0 ; i<6;i++){
-            empleados.a Empleado(confiteria, 2); 
-        }*/
+  
+        int cantEmpleados = 6;
 
-        Empleado empleado1 = new Empleado(confiteria, 2);
-        Empleado empleado2 = new Empleado(confiteria, 1);
-        Empleado empleado3 = new Empleado(confiteria, 3);
+        Mozo mozo = new Mozo(confiteria);
+        Thread thMz = new Thread(mozo);
 
-        Thread th1 = new Thread(empleado1,"Juan");
-        Thread th2 = new Thread(empleado2,"Fran");
-        Thread th3 = new Thread(empleado3,"El Nuevo");
-        
-        th1.start();
-        th2.start();
-        th3.start();
+        Cocinero cocinero = new Cocinero(confiteria);
+        Thread thCn = new Thread(cocinero);
+
+        Empleado[] empleados = new Empleado[cantEmpleados];
+        for (int i=0; i<cantEmpleados;i++){             
+            empleados[i]= new Empleado(confiteria, (i%3) +1);
+            
+        }       
+/* 
+i0 1 b
+i1 2 c
+i2 3 c b
+i3 1 b
+i4 2 c
+i5 3 c b
+
+*/
+        Thread[] hilos = new Thread[cantEmpleados];
+        for (int i=0; i<cantEmpleados;i++){      
+            hilos[i] = new Thread(empleados[i],"Empleado " + i);
+        }
+       
+        for (int i=0; i<cantEmpleados;i++){      
+            hilos[i].start();;
+        }
+
+        thMz.start();
+        thCn.start();
     }
 }
-

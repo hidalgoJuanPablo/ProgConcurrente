@@ -16,20 +16,28 @@ public class Empleado implements Runnable {
         while (!yacomio) {
             if (confiteria.VerificarLugar()) {
                 switch (accion) {
-                    case 1:
-                        confiteria.SolicitarBebida();                        
+                    case 1:                        
+                        SolicitarBebida();
                         break;
                     case 2:
-                        confiteria.SolicitarComida();
+                        SolicitarComida();
                         break;
                     case 3:
-                        confiteria.SolicitarBebida();
-                        confiteria.SolicitarComida();
+                        SolicitarBebida();
+                        SolicitarComida();
                         break;
                 }
                 confiteria.LiberarLugar();
                 yacomio = true;
             }
         }
+    }
+
+    public void SolicitarBebida() {
+        confiteria.SolicitarMozo();
+    }
+
+    public void SolicitarComida() {
+        confiteria.SolicitarCocinero();
     }
 }
