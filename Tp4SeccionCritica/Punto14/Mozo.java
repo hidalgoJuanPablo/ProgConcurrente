@@ -8,26 +8,26 @@ public class Mozo implements Runnable {
     }
 
     @Override
-    public void run(){
-        while(true){
-            try {                
-                confiteria.esperarParaServirBebida();                
+    public void run() {
+        while (true) {
+            try {
+                confiteria.esperarParaServirBebida();
                 comidaHaciendose();
                 confiteria.llevarLaBebida();
-            } catch ( Exception ex) {
-                
+            } catch (Exception ex) {
+
             }
         }
     }
-    
-    private void comidaHaciendose(){
-        //Metodo que simula como el mozo espera para que el cocinero termine de cocinar
+
+    private void comidaHaciendose() {
+        // Metodo que simula como el mozo espera para que el cocinero termine de cocinar
         try {
-          
+
             System.out.println("MOZO le lleva la bebida al empleado");
-        //    Thread.sleep(2000);
-        } catch ( Exception ex) {
-            
+            // Thread.sleep(2000);
+        } catch (Exception ex) {
+
         }
     }
 }

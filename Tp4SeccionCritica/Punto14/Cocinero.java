@@ -1,5 +1,6 @@
 package Punto14;
-public class Cocinero implements Runnable{
+
+public class Cocinero implements Runnable {
     private Confiteria confiteria;
 
     public Cocinero(Confiteria confiteria) {
@@ -7,26 +8,25 @@ public class Cocinero implements Runnable{
     }
 
     @Override
-    public void run(){
-        while(true){
-            try {                
-                confiteria.esperarParaServirComida();                
+    public void run() {
+        while (true) {
+            try {
+                confiteria.esperarParaServirComida();
                 comidaHaciendose();
                 confiteria.llevarLaComida();
-            } catch ( Exception ex) {
-                
+            } catch (Exception ex) {
+
             }
         }
     }
-    
-    private void comidaHaciendose(){         
+
+    private void comidaHaciendose() {
         try {
-          
+
             System.out.println("Cocinero le lleva la comida al empleado");
-        //    Thread.sleep(2000);
-        } catch ( Exception ex) {
-            
+            // Thread.sleep(2000);
+        } catch (Exception ex) {
+
         }
     }
 }
-

@@ -39,7 +39,7 @@ public class Confiteria {
     public void SolicitarMozo() {
         try {
             semMozoLibre.acquire();
-            System.out.println(Thread.currentThread().getName()+" le pide al mozo que lo atienda");
+            System.out.println(Thread.currentThread().getName() + " le pide al mozo que lo atienda");
             semMozo.release();
             semEmpleado.acquire();
         } catch (Exception e) {
@@ -48,11 +48,11 @@ public class Confiteria {
     }
 
     public void esperarParaServirBebida() {
-       try {
-        System.out.println("Mozo haciendo su hobbie mientras espera que le avisen para atender");
-        semMozo.acquire();
-       } catch (Exception e) {  
-       }
+        try {
+            System.out.println("Mozo haciendo su hobbie mientras espera que le avisen para atender");
+            semMozo.acquire();
+        } catch (Exception e) {
+        }
     }
 
     public void llevarLaBebida() {
@@ -65,10 +65,10 @@ public class Confiteria {
     /* Cocinero */
     public void SolicitarCocinero() {
         try {
-           semCocineroLibre.acquire();
-           System.out.println(Thread.currentThread().getName()+" le pide al cocinero que lo atienda");
-           semCocinero.release();
-           semEmpleado.acquire();
+            semCocineroLibre.acquire();
+            System.out.println(Thread.currentThread().getName() + " le pide al cocinero que lo atienda");
+            semCocinero.release();
+            semEmpleado.acquire();
         } catch (Exception e) {
 
         }
@@ -76,17 +76,17 @@ public class Confiteria {
 
     public void esperarParaServirComida() {
         try {
-         System.out.println("Cocinero haciendo su hobbie mientras espera que le avisen para atender");
-         semCocinero.acquire();
-        } catch (Exception e) {  
+            System.out.println("Cocinero haciendo su hobbie mientras espera que le avisen para atender");
+            semCocinero.acquire();
+        } catch (Exception e) {
         }
-     }
- 
-     public void llevarLaComida() {
+    }
+
+    public void llevarLaComida() {
         System.out.println("Cocinero lleva la comida");
         System.out.println("Cocinero ya llevo la comida y se desocupa");
         semEmpleado.release();
         semCocineroLibre.release();
-     }
+    }
 
 }
