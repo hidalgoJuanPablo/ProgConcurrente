@@ -40,15 +40,15 @@ public class Empleado implements Runnable {
     public void SolicitarBebida() {
         confiteria.SolicitarMozo();
     }
-    
-    private void bebiendo(){
-        /*Metodo que simula al empleado bebiendo*/
+
+    private void bebiendo() {
+        /* Metodo que simula al empleado bebiendo */
         try {
             System.out.println(Thread.currentThread().getName() + " esta bebiendo");
             Thread.sleep(5000);
             System.out.println(Thread.currentThread().getName() + " termino de beber");
         } catch (InterruptedException ex) {
-             System.out.println("Hubo un error");
+            System.out.println("Hubo un error");
         }
     }
 

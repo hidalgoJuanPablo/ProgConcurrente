@@ -1,26 +1,17 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Tp4.rendezvous;
+package Punto13;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author repetto.francisco
- */
 public class Mozo implements Runnable {
     private Confiteria confiteria;
-    
-    public Mozo(Confiteria confi){
+
+    public Mozo(Confiteria confi) {
         confiteria = confi;
     }
-            
-    public void run(){
-        while(true){
+
+    public void run() {
+        while (true) {
             try {
                 confiteria.esperarParaServir();//
                 comidaHaciendose();
@@ -30,9 +21,9 @@ public class Mozo implements Runnable {
             }
         }
     }
-    
-    private void comidaHaciendose(){
-        //Metodo que simula como el mozo espera para que el cocinero termine de cocinar
+
+    private void comidaHaciendose() {
+        // Metodo que simula como el mozo espera para que el cocinero termine de cocinar
         try {
             System.out.println("MOZO esperando a que el cocinero haga la comida para el empleado");
             Thread.sleep(5000);
@@ -43,5 +34,4 @@ public class Mozo implements Runnable {
             Logger.getLogger(Mozo.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
 }
